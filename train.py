@@ -5,7 +5,7 @@ from scripts.tokenizer import CharacterTokenizer
 # --- 1. 环境准备与超参数 ---
 device = 'cuda' if torch.cuda.is_available() else 'cpu' # 优先使用 GPU 
 batch_size = 64        # 每次训练的句子数量
-max_iters = 5000       # 总训练步数
+max_iters = 10000       # 总训练步数
 eval_interval = 500    # 每隔多久评估一次模型
 learning_rate = 3e-4   # 寻觅真理的步长
 eval_iters = 200       # 评估时的采样次数

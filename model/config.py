@@ -4,11 +4,11 @@ from dataclasses import dataclass
 class ModelConfig:
     # 基础维度
     block_size: int = 128     # 上下文窗口：模型一次能看多少个字符
-    n_embd: int = 256         # 词嵌入维度：每个字符被转化为多长的向量
+    n_embd: int = 384         # 词嵌入维度：每个字符被转化为多长的向量
     
     # 深度与广度
     n_head: int = 4           # 多头注意力的头数
-    n_layer: int = 4          # Transformer Block 堆叠的层数
+    n_layer: int = 6          # Transformer Block 堆叠的层数
     
     # 训练稳定性
     dropout: float = 0.2      # 丢弃率：随机“遗忘”一些神经元，防止死记硬背

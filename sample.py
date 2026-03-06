@@ -14,7 +14,7 @@ tokenizer = CharacterTokenizer(text)
 # --- 2. 加载已经“封印”的模型权重 ---
 config = ModelConfig(vocab_size=tokenizer.vocab_size)
 model = MoonLanguageModel(config).to(device)
-model.load_state_dict(torch.load('model/moon_model.pth', map_location=device))
+model.load_state_dict(torch.load('model/moon_model.pth', map_location=device,weights_only=True))
 model.eval() # 切换到评估模式，关闭 Dropout
 
 # --- 3. 定义生成函数 ---
@@ -56,4 +56,4 @@ def generate(model, start_str="Moon: ", max_new_tokens=500, temperature=1.0):
     print("\n--- 推演结束 ---")
 
 # --- 4. 开启生成的仪式 ---
-generate(model, start_str="The meaning of life is ", temperature=0.8)
+generate(model, start_str="生命意义所在 ", temperature=0.7)
